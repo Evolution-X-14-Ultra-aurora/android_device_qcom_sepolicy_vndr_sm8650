@@ -71,6 +71,9 @@ neverallow {
 } vendor_qmcs_file_type: { dir file } *;
 
 neverallow { domain
+- vendor_displaycount
+- mediacodec
+- batterysecret
 - init
 - vendor_init
 - ueventd
@@ -98,6 +101,9 @@ userdebug_or_eng(` -vendor_snapcam_app')
 neverallow { domain -init -vendor_init - ueventd } vendor_xdsp_device:chr_file ~{r_file_perms};
 
 neverallow { domain
+- vendor_displaycount
+- mediacodec
+- batterysecret
 - init
 - vendor_init
 - appdomain
@@ -116,6 +122,9 @@ neverallow { domain -init -vendor_init - ueventd } vendor_qdsp_device:chr_file ~
 neverallow { appdomain - shell userdebug_or_eng(`-vendor_sysmonapp_app_test') } vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow mediacodec vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow { domain
+- vendor_displaycount
+- mediacodec
+- batterysecret
 - init
 - vendor_init
 - ueventd
@@ -140,6 +149,9 @@ userdebug_or_eng(` -vendor_subsystem_ramdump')
 neverallow { domain - init - vendor_init - ueventd } { vendor_sys_nonsp_comp vendor_sys_sp_comp }:{ dir file lnk_file } { relabelfrom relabelto setattr };
 
 neverallow { domain
+- vendor_displaycount
+- mediacodec
+- batterysecret
 - init
 - vendor_init
 - ueventd
